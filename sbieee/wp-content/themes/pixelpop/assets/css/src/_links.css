@@ -1,0 +1,29 @@
+@import "_custom-properties.css";
+
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+/* stylelint-disable */
+a {
+	color: var(--color-link);
+}
+/* stylelint-enable */
+
+/*.ppop-custom-content a:visited {
+	color: var(--color-link-visited);
+}*/
+
+a:hover,
+a:focus,
+a:active {
+	color: var(--color-link-active);
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+a:focus-visible {
+	outline: 2px dashed var(--color-key-outline);
+}

@@ -1,0 +1,541 @@
+/**
+ * Styles for the WordPress post/page editor.
+ * Ensures a visual match between back- and front-end.
+ */
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Imports
+   # Custom properties
+   # Typography
+   # Elements
+   # Links
+# Adjustments for the editor
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Imports
+--------------------------------------------------------------*/
+
+@import "../_custom-properties.css";
+@import "../_typography.css";
+@import "../_elements.css";
+@import "../_links.css";
+@import "../_media.css";
+@import "../_blocks.css";
+
+/*--------------------------------------------------------------
+# Adjustments for the editor
+--------------------------------------------------------------*/
+button,
+select,
+option {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	border-radius: inherit;
+}
+
+.editor-post-title__input {
+	font-family: var(--highlight-font-family);
+	font-stretch: condensed;
+	font-size: 2.5rem;
+	line-height: 1.4;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.gallery .gallery-item,
+.wp-block-freeform .gallery .gallery-item {
+	width: auto;
+}
+
+.wp-block-cover h2,
+.wp-block-cover h3,
+.wp-block-cover h4 {
+	color: inherit;
+}
+
+.wp-block-cover .wp-block-cover-text {
+	font-size: 2em;
+	line-height: 1.25;
+}
+
+.wp-block-archives,
+.wp-block-categories__list,
+.wp-block-latest-posts,
+.wp-block-latest-comments {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-block-latest-comments {
+	padding-left: 2.5em;
+	padding-right: 2.5em;
+}
+
+a,
+a svg {
+	transition: all 0.1s ease-in-out;
+}
+
+body {
+	font-family: "Nunito", sans-serif;
+	font-size: 17px;
+	font-weight: 400;
+	letter-spacing: 0px;
+	line-height: 1.5;
+	background: #f6f6f6;
+	padding: 20px;
+	padding-top: 0;
+
+	--color-primary: #ff5a6e;
+	--color-secondary: #ff8a6e;
+
+	--color-layout-1: #fff;
+	--color-layout-2: #f6f6f6;
+	--color-layout-3: #f1f1f1;
+
+	--color-layout-border: #e6e6e6;
+	--color-layout-border-2: #ccc;
+	--color-layout-border-3: #bbb;
+
+	--font-color: #333;
+	--font-color-2: #999;
+	--heading-color: #000;
+	--heading-color-2: #161616;
+}
+
+a {
+	color: var(--color-primary);
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ff8a6e;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	line-height: 1.4;
+	margin: 0 0 20px;
+	padding-top: 20px;
+	color: #000;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	padding-top: 0;
+}
+
+h1 {
+	font-size: 32px;
+	font-weight: 500;
+}
+
+h2,
+.home.blog .entry-title {
+	font-size: 26px;
+	font-weight: 500;
+}
+
+h3 {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+h4 {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+h5 {
+	color: #767676;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-weight: 800;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+}
+
+h6 {
+	color: #333;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	font-weight: 800;
+}
+
+p {
+	margin: 18px 0;
+	padding: 0;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	color: #999;
+	font-size: 18px;
+	margin: 20px 30px;
+	font-style: italic;
+	line-height: 1.6667;
+	margin-bottom: 1.6667em;
+}
+
+blockquote.wp-block-quote {
+	margin-bottom: 30px;
+	padding: 20px;
+	padding-left: 80px;
+	background: #fff;
+	border: 1px solid #e6e6e6;
+	box-shadow: 10px 10px #e6e6e6;
+	position: relative;
+}
+
+blockquote.wp-block-quote.has-text-align-right {
+	padding-left: 20px;
+	padding-right: 80px;
+}
+
+blockquote.wp-block-quote:before {
+	content: "\f10d";
+	font-family: "Font Awesome 5 Free";
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	color: #ffffff;
+	font-weight: 600;
+	font-size: 18px;
+	width: 40px;
+	height: 40px;
+	background: #ff8a6e;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 50%;
+	text-shadow: 2px 2px rgb(0 0 0 / 20%);
+	font-style: normal;
+}
+
+blockquote.wp-block-quote.has-text-align-right:before {
+	content: "\f10e";
+	right: 20px;
+	left: unset;
+}
+
+blockquote.wp-block-quote.has-text-align-center {
+	padding-top: 80px;
+	padding-left: 20px;
+}
+
+blockquote.wp-block-quote.has-text-align-center:before {
+	left: calc(50% - 20px);
+}
+
+blockquote.wp-block-quote p:last-child {
+	margin-bottom: 0;
+}
+
+blockquote p {
+	margin: 0 0 20px 0;
+}
+
+blockquote > p:last-child {
+	margin-bottom: 0;
+}
+
+blockquote cite,
+blockquote small {
+	color: #333;
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+blockquote em,
+blockquote i,
+blockquote cite {
+	font-style: normal;
+}
+
+blockquote strong,
+blockquote b {
+	font-weight: 400;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: "Lucida Sans Typewriter", monospace;
+	font-size: 1rem;
+}
+
+code {
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre {
+	background: #f1f1f1;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #eee;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+blockquote {
+	quotes: "" "";
+}
+
+q {
+	quotes: "“" "”" "‘" "’";
+}
+
+blockquote:before,
+blockquote:after {
+	content: "";
+}
+
+:focus {
+	outline: none;
+}
+
+.has-large-font-size {
+	line-height: 1;
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+dd,
+ol,
+ul {
+	margin: 0 0 1.6875rem 1.6875rem;
+	padding: 0;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/* Table
+----------------------------------------------*/
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	max-width: 100%;
+	width: 100%;
+	empty-cells: show;
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 27px;
+}
+table caption {
+	text-align: left;
+	font-size: 16px;
+	font-weight: 500;
+	color: #a3a5a9;
+}
+th {
+	text-align: left;
+	font-weight: 700;
+	vertical-align: bottom;
+}
+td {
+	vertical-align: top;
+}
+tr.align-middle td,
+td.align-middle {
+	vertical-align: middle;
+}
+th,
+td {
+	padding: 1rem;
+	border-bottom: 1px solid #e6e6e6;
+}
+th:first-child,
+td:first-child {
+	padding-left: 0;
+}
+th:last-child,
+td:last-child {
+	padding-right: 0;
+}
+tfoot th,
+tfoot td {
+	color: #a3a5a9;
+}
+table.bordered td,
+table.bordered th {
+	border: 1px solid #e6e6e6;
+}
+table.striped tr:nth-child(odd) td {
+	background: #f8f8f8;
+}
+table.bordered td:first-child,
+table.bordered th:first-child,
+table.striped td:first-child,
+table.striped th:first-child {
+	padding-left: 1rem;
+}
+table.bordered td:last-child,
+table.bordered th:last-child,
+table.striped td:last-child,
+table.striped th:last-child {
+	padding-right: 1rem;
+}
+table.unstyled td,
+table.unstyled th {
+	border: none;
+	padding: 0;
+}
+.table-responsive {
+	display: block;
+	width: 100%;
+	overflow-x: auto;
+	padding: 1px;
+	-webkit-overflow-scrolling: touch;
+}
+.table-responsive table {
+	max-width: none;
+}
+
+/* Post Title */
+.editor-post-title__input {
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 1.25;
+	color: #000;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/*Gutenburg Buttons*/
+.wp-block-button .wp-block-button__link {
+	font-size: 15px;
+	color: #fff;
+	background: #ff5a6e;
+	border-radius: 3px;
+	padding: 10px 30px;
+	font-style: normal;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 1.3;
+	outline: none;
+	vertical-align: middle;
+	-webkit-appearance: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-transition: all linear 0.2s;
+	transition: all linear 0.2s;
+}
+
+.wp-block-button .wp-block-button__link:hover {
+	outline: none;
+	text-decoration: none;
+	color: #fff;
+	box-shadow: inset 0 0 0 99999px rgba(0, 0, 0, 0.1);
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+	color: #ff5a6e;
+	background: transparent;
+}
+
+.editor-styles-wrapper .wp-block.wp-block-columns {
+	margin-left: auto;
+	margin-right: auto;
+}
