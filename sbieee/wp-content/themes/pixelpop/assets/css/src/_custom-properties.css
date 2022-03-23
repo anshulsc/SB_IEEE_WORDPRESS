@@ -1,0 +1,122 @@
+/**
+ * Custom Properties
+ * aka CSS variables.
+ *
+ * @link: https://developer.mozilla.org/en-US/docs/Web/CSS/--*
+ **/
+
+.ppop-light-theme {
+	--color-layout-1: #fff;
+	--color-layout-2: #f6f6f6;
+	--color-layout-3: #f1f1f1;
+
+	--color-layout-border: #e6e6e6;
+	--color-layout-border-2: #ccc;
+	--color-layout-border-3: #bbb;
+
+	--font-color: #333;
+	--font-color-2: #999;
+	--heading-color: #000;
+	--heading-color-2: #161616;
+
+	/* Keyboard Accessibility Outline Color */
+	--color-key-outline: var(--color-primary);
+}
+
+.ppop-dark-theme {
+	--color-layout-1: #222222;
+	--color-layout-2: #111111;
+	--color-layout-3: #0c0c0c;
+
+	--color-layout-border: #2d2d2d;
+	--color-layout-border-2: #444;
+	--color-layout-border-3: #777;
+
+	--font-color: #eee;
+	--font-color-2: #777;
+	--heading-color: #fff;
+	--heading-color-2: #e5e5e5;
+
+	/* Keyboard Accessibility Outline Color */
+	--color-key-outline: var(--color-primary);
+}
+
+:root {
+	--content-width: 45rem;
+
+	/* Typography */
+	--global-font-family: "Nunito", sans-serif;
+	--highlight-font-family: "Nunito", sans-serif;
+	--global-font-size: 16;
+	--global-font-line-height: 1.4;
+
+	/* Custom editor font sizes */
+	--font-size-small: 14px;
+	--font-size-regular: 16px;
+	--font-size-medium: 26px;
+	--font-size-large: 40px;
+	--font-size-larger: 50px;
+	--font-size-1: 32px;
+	--font-size-2: 26px;
+	--font-size-3: 20px;
+	--font-size-4: 16px;
+	--font-size-5: 14px;
+
+	/* Layout Border */
+	--layout-bw: 1px;
+	--layout-border: var(--layout-bw) solid var(--color-layout-border);
+	--layout-border-2: var(--layout-bw) solid var(--color-layout-border-2);
+	--layout-border-3: var(--layout-bw) solid var(--color-layout-border-3);
+
+	/* Border Radius */
+	--border-radius: 4px;
+	--border-radius-1: 3px;
+	--border-radius-2: 4px;
+	--border-radius-3: 5px;
+	--border-radius-4: 10px;
+	--border-radius-5: 20px;
+	--border-radius-large: 50px;
+	--border-radius-larger: 100px;
+	--border-radius-full: 50%;
+
+	/* Colors */
+	--global-font-color: var(--font-color);
+
+	/* Custom editor colors */
+	--color-theme-primary: var(--color-primary);
+	--color-theme-secondary: var(--color-secondary);
+	--color-theme-red: #ff2b2b;
+	--color-theme-green: #15d91d;
+	--color-theme-blue: #178bf1;
+	--color-theme-yellow: #f1c20f;
+	--color-theme-orange: #eb6811;
+	--color-theme-black: #000;
+	--color-theme-grey: #95a5a6;
+	--color-theme-white: #fff;
+	--color-theme-success: #15d91d;
+	--color-theme-danger: #ff2b2b;
+	--color-theme-warning: #eb6811;
+	--color-theme-info: #0dcaf0;
+}
+
+body {
+	/* Container Spacing */
+	--container-vertical-spacing: 30px;
+	--container-horizontal-spacing: 30px;
+}
+
+@media (max-width: 767px) {
+	body {
+		/* Container Spacing */
+		--container-vertical-spacing: 20px;
+		--container-horizontal-spacing: 20px;
+	}
+}
+
+@media (max-width: 500px) {
+	body {
+		/* Container Spacing */
+		--container-vertical-spacing: 15px;
+		--container-horizontal-spacing: 15px;
+	}
+}
