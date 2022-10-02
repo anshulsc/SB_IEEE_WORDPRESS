@@ -1,6 +1,6 @@
 <!-- Headings-->
 # Readme File Syntax
-## Anshul2
+## Heading2
 ### Heading3
 #### Heading4
 ##### Heading5
